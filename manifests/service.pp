@@ -1,37 +1,37 @@
-# Class to manage the example service.
+# Class to manage the grafana_agent service.
 #
 # @api private
-class example::service {
-  if $::example::manage_service {
-    case $::example::service_provider {
+class grafana_agent::service {
+  if $::grafana_agent::manage_service {
+    case $::grafana_agent::service_provider {
       'systemd': {
-        ::systemd::unit_file { "${::example::service_name}.service":
-          content => template('example/example.service.erb'),
-          before  => Service['example'],
+        ::systemd::unit_file { "${::grafana_agent::service_name}.service":
+          content => template('grafana_agent/grafana_agent.service.erb'),
+          before  => Service['grafana_agent'],
         }
       }
       default: {
-        fail("Service provider ${::example::service_provider} not supported")
+        fail("Service provider ${::grafana_agent::service_provider} not supported")
       }
     }
 
-    case $::example::install_method {
+    case $::grafana_agent::install_method {
       'archive': {}
       'package': {
-        Service['example'] {
-          subscribe => Package['example'],
+        Service['grafana_agent'] {
+          subscribe => Package['grafana_agent'],
         }
       }
       default: {
-        fail("Installation method ${::example::install_method} not supported")
+        fail("Installation method ${::grafana_agent::install_method} not supported")
       }
     }
 
-    service { 'example':
-      ensure   => $::example::service_ensure,
+    service { 'grafana_agent':
+      ensure   => $::grafana_agent::service_ensure,
       enable   => true,
-      name     => $::example::service_name,
-      provider => $::example::service_provider,
+      name     => $::grafana_agent::service_name,
+      provider => $::grafana_agent::service_provider,
     }
   }
 }

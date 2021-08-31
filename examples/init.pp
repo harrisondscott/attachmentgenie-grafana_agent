@@ -9,7 +9,7 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-class { '::example':
-  archive_source => 'https://github.com/attachmentgenie/golang-example/releases/download/v0.1.2/golang-example_0.1.2_linux_x86_64.tar.gz',
+class { '::grafana_agent':
+  archive_source => 'https://github.com/attachmentgenie/golang-grafana_agent/releases/download/v0.1.2/golang-grafana_agent_0.1.2_linux_x86_64.tar.gz',
   install_method => 'archive',
 }

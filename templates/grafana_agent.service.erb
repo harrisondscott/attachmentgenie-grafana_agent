@@ -1,0 +1,8 @@
+[Unit]
+Description=<%= scope['grafana_agent::service_name'] %>
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=<%= scope['grafana_agent::install_dir'] %>/grafana_agent > /dev/null 2>&1
+ExecStop=<%= scope['grafana_agent::install_dir'] %>/grafana_agent > /dev/null 2>&1

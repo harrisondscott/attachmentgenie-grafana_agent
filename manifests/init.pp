@@ -1,24 +1,24 @@
-# Class to install and configure example.
+# Class to install and configure grafana_agent.
 #
-# Use this module to install and configure example.
+# Use this module to install and configure grafana_agent.
 #
 # @example Declaring the class
-#   include ::example
+#   include ::grafana_agent
 #
-# @param archive_source Location of example binary release.
-# @param group Group that owns example files.
-# @param install_dir Location of example binary release.
-# @param install_method How to install example.
-# @param manage_repo Manage the example repo.
-# @param manage_service Manage the example service.
-# @param manage_user Manage example user and group.
+# @param archive_source Location of grafana_agent binary release.
+# @param group Group that owns grafana_agent files.
+# @param install_dir Location of grafana_agent binary release.
+# @param install_method How to install grafana_agent.
+# @param manage_repo Manage the grafana_agent repo.
+# @param manage_service Manage the grafana_agent service.
+# @param manage_user Manage grafana_agent user and group.
 # @param package_name Name of package to install.
-# @param package_version Version of example to install.
+# @param package_version Version of grafana_agent to install.
 # @param service_name Name of service to manage.
 # @param service_provider Init system that is used.
 # @param service_ensure The state of the service.
-# @param user User that owns example files.
-class example (
+# @param user User that owns grafana_agent files.
+class grafana_agent (
   String[1] $group,
   Stdlib::Absolutepath $install_dir,
   Enum['archive','package'] $install_method ,
@@ -33,9 +33,9 @@ class example (
   String[1] $user,
   Optional[Stdlib::HTTPUrl] $archive_source = undef,
 ) {
-  anchor { 'example::begin': }
-  -> class{ '::example::install': }
-  -> class{ '::example::config': }
-  ~> class{ '::example::service': }
-  -> anchor { 'example::end': }
+  anchor { 'grafana_agent::begin': }
+  -> class{ '::grafana_agent::install': }
+  -> class{ '::grafana_agent::config': }
+  ~> class{ '::grafana_agent::service': }
+  -> anchor { 'grafana_agent::end': }
 }

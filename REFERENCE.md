@@ -8,34 +8,34 @@
 
 #### Public Classes
 
-* [`example`](#example): Class to install and configure example.  Use this module to install and configure example.
-* [`example::repo`](#examplerepo): A short summary of the purpose of this class
+* [`grafana_agent`](#grafana_agent): Class to install and configure grafana_agent.  Use this module to install and configure grafana_agent.
+* [`grafana_agent::repo`](#grafana_agentrepo): A short summary of the purpose of this class
 
 #### Private Classes
 
-* `example::config`: Class to configure example.
-* `example::install`: Class to install example.
-* `example::service`: Class to manage the example service.
+* `grafana_agent::config`: Class to configure grafana_agent.
+* `grafana_agent::install`: Class to install grafana_agent.
+* `grafana_agent::service`: Class to manage the grafana_agent service.
 
 ## Classes
 
-### <a name="example"></a>`example`
+### <a name="grafana_agent"></a>`grafana_agent`
 
-Class to install and configure example.
+Class to install and configure grafana_agent.
 
-Use this module to install and configure example.
+Use this module to install and configure grafana_agent.
 
 #### Examples
 
 ##### Declaring the class
 
 ```puppet
-include ::example
+include ::grafana_agent
 ```
 
 #### Parameters
 
-The following parameters are available in the `example` class:
+The following parameters are available in the `grafana_agent` class:
 
 * [`archive_source`](#archive_source)
 * [`group`](#group)
@@ -55,7 +55,7 @@ The following parameters are available in the `example` class:
 
 Data type: `Optional[Stdlib::HTTPUrl]`
 
-Location of example binary release.
+Location of grafana_agent binary release.
 
 Default value: ``undef``
 
@@ -63,37 +63,37 @@ Default value: ``undef``
 
 Data type: `String[1]`
 
-Group that owns example files.
+Group that owns grafana_agent files.
 
 ##### <a name="install_dir"></a>`install_dir`
 
 Data type: `Stdlib::Absolutepath`
 
-Location of example binary release.
+Location of grafana_agent binary release.
 
 ##### <a name="install_method"></a>`install_method`
 
 Data type: `Enum['archive','package']`
 
-How to install example.
+How to install grafana_agent.
 
 ##### <a name="manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
-Manage the example repo.
+Manage the grafana_agent repo.
 
 ##### <a name="manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
-Manage the example service.
+Manage the grafana_agent service.
 
 ##### <a name="manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
-Manage example user and group.
+Manage grafana_agent user and group.
 
 ##### <a name="package_name"></a>`package_name`
 
@@ -105,7 +105,7 @@ Name of package to install.
 
 Data type: `String[1]`
 
-Version of example to install.
+Version of grafana_agent to install.
 
 ##### <a name="service_name"></a>`service_name`
 
@@ -129,9 +129,9 @@ The state of the service.
 
 Data type: `String[1]`
 
-User that owns example files.
+User that owns grafana_agent files.
 
-### <a name="examplerepo"></a>`example::repo`
+### <a name="grafana_agentrepo"></a>`grafana_agent::repo`
 
 A description of what this class does
 
@@ -140,6 +140,6 @@ A description of what this class does
 ##### 
 
 ```puppet
-include example::repo
+include grafana_agent::repo
 ```
 

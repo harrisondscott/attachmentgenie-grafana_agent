@@ -1,12 +1,12 @@
-# attachmentgenie-example
+# attachmentgenie-grafana_agent
 
-[![](https://img.shields.io/puppetforge/pdk-version/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
-[![](https://img.shields.io/puppetforge/v/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
-[![](https://img.shields.io/puppetforge/dt/attachmentgenie/example.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/example)
-[![Spec Tests](https://github.com/attachmentgenie/attachmentgenie-example/actions/workflows/spec.yml/badge.svg)](https://github.com/attachmentgenie/attachmentgenie-example/actions/workflows/spec.yml)
-[![License](https://img.shields.io/github/license/attachmentgenie/attachmentgenie-example?stype=popout)](https://github.com/attachmentgenie/attachmentgenie-example/blob/master/LICENSE)
+[![](https://img.shields.io/puppetforge/pdk-version/attachmentgenie/grafana_agent.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/grafana_agent)
+[![](https://img.shields.io/puppetforge/v/attachmentgenie/grafana_agent.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/grafana_agent)
+[![](https://img.shields.io/puppetforge/dt/attachmentgenie/grafana_agent.svg?style=popout)](https://forge.puppetlabs.com/attachmentgenie/grafana_agent)
+[![Spec Tests](https://github.com/attachmentgenie/attachmentgenie-grafana_agent/actions/workflows/spec.yml/badge.svg)](https://github.com/attachmentgenie/attachmentgenie-grafana_agent/actions/workflows/spec.yml)
+[![License](https://img.shields.io/github/license/attachmentgenie/attachmentgenie-grafana_agent?stype=popout)](https://github.com/attachmentgenie/attachmentgenie-grafana_agent/blob/master/LICENSE)
 
-Deploy and configure attachmentgenie's example on a node.
+Deploy and configure grafana agent on a node.
 
 - [Description](#description)
 - [Usage](#usage)
@@ -17,15 +17,15 @@ Deploy and configure attachmentgenie's example on a node.
 
 ## Description
 
-This project serves as my starter project
+This project serves to install and configure grafana agent
 
 ## Usage
 
 All options and configuration can be done through interacting with the parameters
-on the main example class.
+on the main grafana_agent class.
 These are now documented via [Puppet Strings](https://github.com/puppetlabs/puppet-strings)
 
-You can view example usage in [REFERENCE](REFERENCE.md).
+You can view grafana_agent usage in [REFERENCE](REFERENCE.md).
 
 ## Reference
 

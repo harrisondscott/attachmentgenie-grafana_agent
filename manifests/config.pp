@@ -1,4 +1,4 @@
-# Class to configure example.
+# Class to configure grafana_agent.
 #
 # @api private
-class example::config {}
+class grafana_agent::config {}

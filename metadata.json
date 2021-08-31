@@ -1,12 +1,12 @@
 {
-  "name": "attachmentgenie-example",
-  "version": "4.0.0",
+  "name": "attachmentgenie-grafana_agent",
+  "version": "1.0.0",
   "author": "bram vogelaar <bram@attachmentgenie.com>",
-  "summary": "Setup example",
+  "summary": "Setup and configure grafana agent",
   "license": "MIT",
-  "source": "https://github.com/attachmentgenie/attachmentgenie-example.git",
-  "project_page": "https://github.com/attachmentgenie/attachmentgenie-example",
-  "issues_url": "https://github.com/attachmentgenie/attachmentgenie-example/issues",
+  "source": "https://github.com/attachmentgenie/attachmentgenie-grafana_agent.git",
+  "project_page": "https://github.com/attachmentgenie/attachmentgenie-grafana_agent",
+  "issues_url": "https://github.com/attachmentgenie/attachmentgenie-grafana_agent/issues",
   "dependencies": [
     {
       "name": "puppet/archive",
@@ -51,7 +51,7 @@
     }
   ],
   "tags": [
-    "example"
+    "grafana_agent"
   ],
   "pdk-version": "2.2.0",
   "template-url": "https://github.com/puppetlabs/pdk-templates#2.2.0",

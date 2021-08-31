@@ -1,14 +1,14 @@
 ---
-example::group: 'example'
-example::install_dir: '/opt/example'
-example::install_method: 'package'
-example::manage_service: true
-example::manage_user: true
-example::manage_repo: true
-example::package_name: 'example'
-example::package_version: 'present'
-example::service_name: 'example'
-example::service_provider: 'systemd'
-example::service_ensure: 'running'
-example::user: 'example'
+grafana_agent::group: 'grafana_agent'
+grafana_agent::install_dir: '/opt/grafana_agent'
+grafana_agent::install_method: 'package'
+grafana_agent::manage_service: true
+grafana_agent::manage_user: true
+grafana_agent::manage_repo: true
+grafana_agent::package_name: 'grafana_agent'
+grafana_agent::package_version: 'present'
+grafana_agent::service_name: 'grafana_agent'
+grafana_agent::service_provider: 'systemd'
+grafana_agent::service_ensure: 'running'
+grafana_agent::user: 'grafana_agent'
 ...
