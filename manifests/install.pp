@@ -3,12 +3,12 @@
 # @api private
 class grafana_agent::install {
   if $::grafana_agent::manage_user {
-    user { 'grafana_agent':
+    user { 'grafana-agent':
       ensure => present,
       home   => $::grafana_agent::install_dir,
       name   => $::grafana_agent::user,
     }
-    group { 'grafana_agent':
+    group { 'grafana-agent':
       ensure => present,
       name   => $::grafana_agent::group
     }
@@ -18,13 +18,13 @@ class grafana_agent::install {
       if $::grafana_agent::manage_repo {
         class { 'grafana_agent::repo': }
       }
-      package { 'grafana_agent':
+      package { 'grafana-agent':
         ensure => $::grafana_agent::package_version,
         name   => $::grafana_agent::package_name,
       }
     }
     'archive': {
-      file { 'grafana_agent install dir':
+      file { 'grafana-agent install dir':
         ensure => directory,
         group  => $::grafana_agent::group,
         owner  => $::grafana_agent::user,
@@ -32,20 +32,20 @@ class grafana_agent::install {
       }
       if $::grafana_agent::manage_user {
         File[$::grafana_agent::install_dir] {
-          require => [Group['grafana_agent'],User['grafana_agent']],
+          require => [Group['grafana-agent'],User['grafana-agent']],
         }
       }
 
-      archive { 'grafana_agent archive':
+      archive { 'grafana-agent archive':
         cleanup      => true,
-        creates      => "${::grafana_agent::install_dir}/grafana_agent",
+        creates      => "${::grafana_agent::install_dir}/agent-linux-amd64",
         extract      => true,
         extract_path => $::grafana_agent::install_dir,
         group        => $::grafana_agent::group,
-        path         => '/tmp/grafana_agent.tar.gz',
-        source       => $::grafana_agent::archive_source,
+        path         => '/tmp/grafana-agent.zip',
+        source       => "https://github.com/grafana/agent/releases/download/${grafana_agent::version}/agent-linux-amd64.zip",
         user         => $::grafana_agent::user,
-        require      => File['grafana_agent install dir']
+        require      => File['grafana-agent install dir']
       }
 
     }

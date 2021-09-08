@@ -1,4 +1,4 @@
-# Class to manage the grafana_agent service.
+# Class to manage the grafana-agent service.
 #
 # @api private
 class grafana_agent::service {
@@ -6,8 +6,8 @@ class grafana_agent::service {
     case $::grafana_agent::service_provider {
       'systemd': {
         ::systemd::unit_file { "${::grafana_agent::service_name}.service":
-          content => template('grafana_agent/grafana_agent.service.erb'),
-          before  => Service['grafana_agent'],
+          content => template('grafana_agent/grafana-agent.service.erb'),
+          before  => Service['grafana-agent'],
         }
       }
       default: {
@@ -18,8 +18,8 @@ class grafana_agent::service {
     case $::grafana_agent::install_method {
       'archive': {}
       'package': {
-        Service['grafana_agent'] {
-          subscribe => Package['grafana_agent'],
+        Service['grafana-agent'] {
+          subscribe => Package['grafana-agent'],
         }
       }
       default: {
@@ -27,7 +27,7 @@ class grafana_agent::service {
       }
     }
 
-    service { 'grafana_agent':
+    service { 'grafana-agent':
       ensure   => $::grafana_agent::service_ensure,
       enable   => true,
       name     => $::grafana_agent::service_name,

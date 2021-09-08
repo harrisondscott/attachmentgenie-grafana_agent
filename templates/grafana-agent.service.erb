@@ -1,0 +1,10 @@
+[Unit]
+Description=Grafana Agent
+
+[Service]
+User=<% scope['grafana_agent::user'] %>
+ExecStart=<%= scope['grafana_agent::install_dir'] %>/agent-linux-amd64  --config.file /etc/grafana-agent.yaml
+Restart=always
+
+[Install]
+WantedBy=mult-user.target

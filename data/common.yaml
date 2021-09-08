@@ -1,14 +1,15 @@
 ---
-grafana_agent::group: 'grafana_agent'
-grafana_agent::install_dir: '/opt/grafana_agent'
-grafana_agent::install_method: 'package'
+grafana_agent::group: 'grafana-agent'
+grafana_agent::install_dir: '/opt/grafana-agent'
+grafana_agent::install_method: archive
 grafana_agent::manage_service: true
 grafana_agent::manage_user: true
 grafana_agent::manage_repo: true
-grafana_agent::package_name: 'grafana_agent'
+grafana_agent::package_name: 'grafana-agent'
 grafana_agent::package_version: 'present'
-grafana_agent::service_name: 'grafana_agent'
+grafana_agent::service_name: 'grafana-agent'
 grafana_agent::service_provider: 'systemd'
 grafana_agent::service_ensure: 'running'
-grafana_agent::user: 'grafana_agent'
+grafana_agent::user: 'grafana-agent'
+grafana_agent::version: 'v0.18.2'
 ...
