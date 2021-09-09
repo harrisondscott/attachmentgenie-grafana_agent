@@ -2,7 +2,7 @@
 #
 # @api private
 #
-# Configuration as described at https://grafana.com/docs/agent/latest/configuration/
+# @see https://grafana.com/docs/agent/latest/configuration/
 class grafana_agent::config {
   $config_file = '/etc/grafana-agent.yaml'
 

@@ -4,8 +4,16 @@ require 'spec_helper_acceptance'
 
 describe 'with default parameters ', if: ['debian', 'redhat', 'ubuntu'].include?(os[:family]) do
   pp = <<-PUPPETCODE
-  class { '::grafana_agent':
+  package { 'unzip':
+    ensure => present,
+  }
+  -> class { '::grafana_agent':
     install_method => 'archive',
+    server_config_hash => {
+      server => {
+        http_listen_port => 12345
+      }
+    }
   }
 PUPPETCODE
 
@@ -21,11 +29,11 @@ PUPPETCODE
     it { is_expected.to exist }
   end
 
-  describe file('/opt/grafana_agent') do
+  describe file('/opt/grafana-agent') do
     it { is_expected.to be_directory }
   end
 
-  describe file('/opt/grafana_agent/grafana_agent') do
+  describe file('/etc/grafana-agent.yaml') do
     it { is_expected.to be_file }
   end
 
@@ -34,7 +42,11 @@ PUPPETCODE
     it { is_expected.to be_running.under('systemd') }
   end
 
-  describe port(8080) do
+  describe port(12_345) do
+    it { is_expected.to be_listening }
+  end
+
+  describe port(9095) do
     it { is_expected.to be_listening }
   end
 end

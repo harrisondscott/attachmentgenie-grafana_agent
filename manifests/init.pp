@@ -5,6 +5,7 @@
 # @example Declaring the class
 #   include ::grafana_agent
 #
+# @param group Group that owns grafana-agent files and processes.
 # @param install_dir Location of grafana-agent binary release.
 # @param install_method How to install grafana-agent.
 # @param manage_repo Manage the grafana-agent repo.
@@ -15,7 +16,15 @@
 # @param service_name Name of service to manage.
 # @param service_provider Init system that is used.
 # @param service_ensure The state of the service.
-# @param user User that owns grafana-agent files.
+# @param user User that owns grafana-agent files and processes.
+# @param version Which version grafana-agent will be installed.
+# @param intergrations_config_hash Configuration specific to the integrations section.
+# @param loki_config_hash Configuration specific to the loki section.
+# @param prometheus_config_hash Configuration specific to the loki section.
+# @param server_config_hash Configuration specific to the server section.
+# @param tempo_config_hash Configuration specific to the server section
+#
+# @see https://grafana.com/docs/agent/latest/configuration/ 
 class grafana_agent (
   String[1] $group,
   Stdlib::Absolutepath $install_dir,
