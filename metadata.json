@@ -1,7 +1,7 @@
 {
   "name": "attachmentgenie-grafana_agent",
   "version": "1.0.0",
-  "author": "bram vogelaar <bram@attachmentgenie.com>",
+  "author": "attachmentgenie",
   "summary": "Setup and configure grafana agent",
   "license": "MIT",
   "source": "https://github.com/attachmentgenie/attachmentgenie-grafana_agent.git",

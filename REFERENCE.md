@@ -8,22 +8,25 @@
 
 #### Public Classes
 
-* [`grafana_agent`](#grafana_agent): Class to install and configure grafana_agent.  Use this module to install and configure grafana_agent.
+* [`grafana_agent`](#grafana_agent): Class to install and configure grafana-agent.  Use this module to install and configure grafana-agent.
 * [`grafana_agent::repo`](#grafana_agentrepo): A short summary of the purpose of this class
 
 #### Private Classes
 
 * `grafana_agent::config`: Class to configure grafana_agent.
 * `grafana_agent::install`: Class to install grafana_agent.
-* `grafana_agent::service`: Class to manage the grafana_agent service.
+* `grafana_agent::service`: Class to manage the grafana-agent service.
 
 ## Classes
 
 ### <a name="grafana_agent"></a>`grafana_agent`
 
-Class to install and configure grafana_agent.
+Class to install and configure grafana-agent.
 
-Use this module to install and configure grafana_agent.
+Use this module to install and configure grafana-agent.
+
+* **See also**
+  * https://grafana.com/docs/agent/latest/configuration/
 
 #### Examples
 
@@ -37,7 +40,6 @@ include ::grafana_agent
 
 The following parameters are available in the `grafana_agent` class:
 
-* [`archive_source`](#archive_source)
 * [`group`](#group)
 * [`install_dir`](#install_dir)
 * [`install_method`](#install_method)
@@ -50,50 +52,48 @@ The following parameters are available in the `grafana_agent` class:
 * [`service_provider`](#service_provider)
 * [`service_ensure`](#service_ensure)
 * [`user`](#user)
-
-##### <a name="archive_source"></a>`archive_source`
-
-Data type: `Optional[Stdlib::HTTPUrl]`
-
-Location of grafana_agent binary release.
-
-Default value: ``undef``
+* [`version`](#version)
+* [`intergrations_config_hash`](#intergrations_config_hash)
+* [`loki_config_hash`](#loki_config_hash)
+* [`prometheus_config_hash`](#prometheus_config_hash)
+* [`server_config_hash`](#server_config_hash)
+* [`tempo_config_hash`](#tempo_config_hash)
 
 ##### <a name="group"></a>`group`
 
 Data type: `String[1]`
 
-Group that owns grafana_agent files.
+Group that owns grafana-agent files and processes.
 
 ##### <a name="install_dir"></a>`install_dir`
 
 Data type: `Stdlib::Absolutepath`
 
-Location of grafana_agent binary release.
+Location of grafana-agent binary release.
 
 ##### <a name="install_method"></a>`install_method`
 
 Data type: `Enum['archive','package']`
 
-How to install grafana_agent.
+How to install grafana-agent.
 
 ##### <a name="manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
-Manage the grafana_agent repo.
+Manage the grafana-agent repo.
 
 ##### <a name="manage_service"></a>`manage_service`
 
 Data type: `Boolean`
 
-Manage the grafana_agent service.
+Manage the grafana-agent service.
 
 ##### <a name="manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
-Manage grafana_agent user and group.
+Manage grafana-agent user and group.
 
 ##### <a name="package_name"></a>`package_name`
 
@@ -105,7 +105,7 @@ Name of package to install.
 
 Data type: `String[1]`
 
-Version of grafana_agent to install.
+Version of grafana-agent to install.
 
 ##### <a name="service_name"></a>`service_name`
 
@@ -129,7 +129,53 @@ The state of the service.
 
 Data type: `String[1]`
 
-User that owns grafana_agent files.
+User that owns grafana-agent files and processes.
+
+##### <a name="version"></a>`version`
+
+Data type: `String[1]`
+
+Which version grafana-agent will be installed.
+
+##### <a name="intergrations_config_hash"></a>`intergrations_config_hash`
+
+Data type: `Optional[Hash]`
+
+Configuration specific to the integrations section.
+
+Default value: ``undef``
+
+##### <a name="loki_config_hash"></a>`loki_config_hash`
+
+Data type: `Optional[Hash]`
+
+Configuration specific to the loki section.
+
+Default value: ``undef``
+
+##### <a name="prometheus_config_hash"></a>`prometheus_config_hash`
+
+Data type: `Optional[Hash]`
+
+Configuration specific to the loki section.
+
+Default value: ``undef``
+
+##### <a name="server_config_hash"></a>`server_config_hash`
+
+Data type: `Optional[Hash]`
+
+Configuration specific to the server section.
+
+Default value: ``undef``
+
+##### <a name="tempo_config_hash"></a>`tempo_config_hash`
+
+Data type: `Optional[Hash]`
+
+Configuration specific to the server section
+
+Default value: ``undef``
 
 ### <a name="grafana_agentrepo"></a>`grafana_agent::repo`
 

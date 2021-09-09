@@ -25,7 +25,7 @@ PUPPETCODE
     it { is_expected.to be_directory }
   end
 
-  describe file('/opt/grafana_agent/grafana_agent') do
+  describe file('/etc/grafana-agent.yaml') do
     it { is_expected.to be_file }
   end
 
@@ -34,7 +34,11 @@ PUPPETCODE
     it { is_expected.to be_running.under('systemd') }
   end
 
-  describe port(8080) do
+  describe port(80) do
+    it { is_expected.to be_listening }
+  end
+
+  describe port(9095) do
     it { is_expected.to be_listening }
   end
 end
