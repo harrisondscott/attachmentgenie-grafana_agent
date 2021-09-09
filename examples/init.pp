@@ -9,6 +9,14 @@
 # Learn more about module testing here:
 # http://docs.puppetlabs.com/guides/tests_smoke.html
 #
-class { '::grafana_agent':
-  install_method => 'archive',
-}
+  package { 'unzip':
+    ensure => present,
+  }
+  -> class { '::grafana_agent':
+    install_method     => 'archive',
+    server_config_hash => {
+      server => {
+        http_listen_port => 12345
+      }
+    }
+  }
